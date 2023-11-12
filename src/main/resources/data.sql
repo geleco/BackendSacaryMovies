@@ -17,5 +17,5 @@ INSERT INTO movie (nome, url_imagem) VALUES ('O Brinquedo Assassino', '/images/o
 INSERT INTO movie (nome, url_imagem) VALUES ('O Exorcista', '/images/o_exorcista.jpg');
 INSERT INTO movie (nome, url_imagem) VALUES ('O Massacre da Serra Elétrica', '/images/o_massacre_da_serra_eletrica.png');
 INSERT INTO movie (nome, url_imagem) VALUES ('O Sexto Sentido', '/images/o_sexto_sentido.webp');
-INSERT INTO movie (nome, url_imagem) VALUES ('O Silêncio dos Inocentes', '/images/o_silencio_dos_.webp');
+INSERT INTO movie (nome, url_imagem) VALUES ('O Silêncio dos Inocentes', '/images/o_silencio_dos_inocentes.webp');
 INSERT INTO movie (nome, url_imagem) VALUES ('Sexta Feira 13', '/images/sexta_feira_13.webp');
