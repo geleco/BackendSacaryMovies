@@ -4,9 +4,6 @@ import com.scarymovies.entity.Movie;
 import com.scarymovies.service.MovieService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.RequestParam;
-
-
 
 import java.util.List;
 import java.util.Optional;
@@ -34,9 +31,10 @@ public class MovieController {
     }
 
     // Método para buscar um filme específico pelo ID
-    @GetMapping("/{id}")
-    public ResponseEntity<Movie> getMovieById(@RequestParam ("id") String codigo) {
-        Optional<Movie> movie = movieService.getMovieById( Long.parseLong(codigo));
-        return movie.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-    }
+@GetMapping("/{id}")
+public ResponseEntity<Movie> getMovieById(@PathVariable("id") Long id) {
+    Optional<Movie> movie = movieService.getMovieById(id);
+    return movie.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+}
+
 }
