@@ -31,10 +31,16 @@ public class MovieController {
     }
 
     // Método para buscar um filme específico pelo ID
-@GetMapping("/{id}")
-public ResponseEntity<Movie> getMovieById(@PathVariable("id") Long id) {
-    Optional<Movie> movie = movieService.getMovieById(id);
-    return movie.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-}
+    @GetMapping("/{id}")
+    public ResponseEntity<Movie> getMovieById(@PathVariable("id") Long id) {
+        Optional<Movie> movie = movieService.getMovieById(id);
+        return movie.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
 
+    // Novo endpoint para atualizar o status de visualização de um filme
+    @PutMapping("/{id}/status")
+    public ResponseEntity<Void> updateMovieWatchedStatus(@PathVariable Long id, @RequestBody String status) {
+        movieService.updateMovieWatchedStatus(id, status);
+        return ResponseEntity.ok().build();
+    }
 }

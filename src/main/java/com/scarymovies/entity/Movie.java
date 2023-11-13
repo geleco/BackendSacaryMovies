@@ -19,8 +19,11 @@ public class Movie {
     @Column(name = "url_imagem")
     private String urlImagem;
 
-    @Column(name = "trailer_id") // Novo campo para o ID do trailer
+    @Column(name = "trailer_id")
     private String trailerId;
+
+    @Column(name = "watched_status")
+    private String watchedStatus; // Novo campo para o status de visualização
 
     // Getters e setters
 
@@ -48,11 +51,19 @@ public class Movie {
         this.urlImagem = urlImagem;
     }
 
-    public String getTrailerId() { // Getter para trailerId
+    public String getTrailerId() {
         return trailerId;
     }
 
-    public void setTrailerId(String trailerId) { // Setter para trailerId
+    public void setTrailerId(String trailerId) {
         this.trailerId = trailerId;
+    }
+
+    public String getWatchedStatus() {
+        return watchedStatus;
+    }
+
+    public void setWatchedStatus(String watchedStatus) {
+        this.watchedStatus = watchedStatus;
     }
 }

@@ -29,4 +29,12 @@ public class MovieService {
     public Optional<Movie> getMovieById(Long id) {
         return movieRepository.findById(id);
     }
+
+    // Novo método para atualizar o status de visualização de um filme
+    public void updateMovieWatchedStatus(Long id, String status) {
+        movieRepository.findById(id).ifPresent(movie -> {
+            movie.setWatchedStatus(status);
+            movieRepository.save(movie);
+        });
+    }
 }
