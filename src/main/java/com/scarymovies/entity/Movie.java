@@ -19,6 +19,9 @@ public class Movie {
     @Column(name = "url_imagem")
     private String urlImagem;
 
+    @Column(name = "trailer_id") // Novo campo para o ID do trailer
+    private String trailerId;
+
     // Getters e setters
 
     public Long getId() {
@@ -43,5 +46,13 @@ public class Movie {
 
     public void setUrlImagem(String urlImagem) {
         this.urlImagem = urlImagem;
+    }
+
+    public String getTrailerId() { // Getter para trailerId
+        return trailerId;
+    }
+
+    public void setTrailerId(String trailerId) { // Setter para trailerId
+        this.trailerId = trailerId;
     }
 }
